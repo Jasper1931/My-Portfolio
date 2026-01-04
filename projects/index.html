@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <link rel="icon" type="image/png" href="/My-Portfolio/images/portfolio-logo.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="/My-Portfolio/css/aos.css" rel="stylesheet">
+
+    <link rel="preload" as="style" href="/My-Portfolio/build/assets/app-DTRXXNym.css" /><link rel="modulepreload" as="script" href="/My-Portfolio/build/assets/app-CAiCLEjY.js" /><link rel="stylesheet" href="/My-Portfolio/build/assets/app-DTRXXNym.css" /><script type="module" src="/My-Portfolio/build/assets/app-CAiCLEjY.js"></script>
+    <style>
+        /* Custom Glass Effect Class */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-300 font-sans antialiased selection:bg-brand-red selection:text-white overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 bg-brand-dark/80 backdrop-blur-xl border-b border-white/5 transition-all duration-300" id="navbar">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="/My-Portfolio/#home" class="text-2xl font-bold text-white tracking-wider hover:text-brand-red transition duration-300">
+            PORTFO<span class="text-brand-red">LIO.</span>
+        </a>
+
+        <div class="hidden md:flex items-center space-x-1">
+                        <a href="/My-Portfolio/#home"
+               class="nav-link relative px-4 py-2 text-sm font-medium text-slate-400 hover:text-white transition-colors duration-300 group" 
+               data-section="home">
+                Home
+                <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-brand-red to-purple-600 group-hover:w-full group-hover:left-0 transition-all duration-300 ease-out shadow-[0_0_10px_#ef4444] rounded-full"></span>
+                <span class="active-indicator absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-brand-red to-purple-600 shadow-[0_0_15px_#ef4444] opacity-0 transition-opacity duration-300"></span>
+            </a>
+                        <a href="/My-Portfolio/#about"
+               class="nav-link relative px-4 py-2 text-sm font-medium text-slate-400 hover:text-white transition-colors duration-300 group" 
+               data-section="about">
+                About
+                <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-brand-red to-purple-600 group-hover:w-full group-hover:left-0 transition-all duration-300 ease-out shadow-[0_0_10px_#ef4444] rounded-full"></span>
+                <span class="active-indicator absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-brand-red to-purple-600 shadow-[0_0_15px_#ef4444] opacity-0 transition-opacity duration-300"></span>
+            </a>
+                        <a href="/My-Portfolio/#projects"
+               class="nav-link relative px-4 py-2 text-sm font-medium text-slate-400 hover:text-white transition-colors duration-300 group" 
+               data-section="projects">
+                Projects
+                <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-brand-red to-purple-600 group-hover:w-full group-hover:left-0 transition-all duration-300 ease-out shadow-[0_0_10px_#ef4444] rounded-full"></span>
+                <span class="active-indicator absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-brand-red to-purple-600 shadow-[0_0_15px_#ef4444] opacity-0 transition-opacity duration-300"></span>
+            </a>
+                        <a href="/My-Portfolio/#contact"
+               class="nav-link relative px-4 py-2 text-sm font-medium text-slate-400 hover:text-white transition-colors duration-300 group" 
+               data-section="contact">
+                Contact
+                <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-brand-red to-purple-600 group-hover:w-full group-hover:left-0 transition-all duration-300 ease-out shadow-[0_0_10px_#ef4444] rounded-full"></span>
+                <span class="active-indicator absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-brand-red to-purple-600 shadow-[0_0_15px_#ef4444] opacity-0 transition-opacity duration-300"></span>
+            </a>
+                    </div>
+
+        <button id="menu-btn" class="block md:hidden text-white focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-white/10">
+        <a href="/My-Portfolio/#home" class="block px-6 py-4 text-slate-300 hover:bg-white/5 hover:text-brand-red transition">Home</a>
+        <a href="/My-Portfolio/#about"  class="block px-6 py-4 text-slate-300 hover:bg-white/5 hover:text-brand-red transition">About</a>
+        <a href="/My-Portfolio/#projects" class="block px-6 py-4 text-slate-300 hover:bg-white/5 hover:text-brand-red transition">Projects</a>
+        <a href="/My-Portfolio/#contact" class="block px-6 py-4 text-slate-300 hover:bg-white/5 hover:text-brand-red transition">Contact</a>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // --- 1. Scroll Observer Logic (Kept mostly the same) ---
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        if (sections.length > 0) {
+            const observerOptions = {
+                root: null,
+                rootMargin: "-20% 0px -70% 0px",
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const activeId = entry.target.getAttribute("id");
+                        navLinks.forEach((link) => {
+                            const indicator = link.querySelector('.active-indicator');
+                            if (link.getAttribute("data-section") === activeId) {
+                                link.classList.add("text-white");
+                                link.classList.remove("text-slate-400");
+                                if(indicator) indicator.classList.remove("opacity-0");
+                            } else {
+                                link.classList.add("text-slate-400");
+                                link.classList.remove("text-white");
+                                if(indicator) indicator.classList.add("opacity-0");
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach((section) => observer.observe(section));
+        }
+
+        // --- 2. Mobile Menu Logic (MOVED INSIDE HERE) ---
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Check if elements exist to prevent errors
+        if (menuBtn && mobileMenu) {
+            // Remove any existing event listeners by cloning (optional safety step)
+            const newMenuBtn = menuBtn.cloneNode(true);
+            menuBtn.parentNode.replaceChild(newMenuBtn, menuBtn);
+
+            newMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                console.log("Menu clicked!"); // Debug check
+            });
+        }
+    });
+</script>
+    <main>
+        
+    <section class="min-h-screen pt-24 pb-20 bg-brand-dark relative overflow-hidden">
+        
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[150px]"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-red/10 rounded-full blur-[150px]"></div>
+        </div>
+
+        <div class="container mx-auto px-6">
+            
+            <div class="flex items-center gap-4 text-sm text-slate-400 mb-8" data-aos="fade-down">
+                <a href="/My-Portfolio/#projects" class="flex items-center gap-2 hover:text-white transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back
+                </a>
+                <span>/</span>
+                <span class="text-white">Projects</span>
+            </div>
+
+            <div class="mb-16" data-aos="fade-right">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">All Projects</h1>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-brand-red to-purple-600 rounded-full mb-6"></div>
+                <p class="text-slate-400 text-lg max-w-2xl">
+                    A collection of my work in full-stack development, automation, and UI/UX design.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div data-aos="fade-up" data-aos-delay="0">
+                    <a href="/My-Portfolio/project/cake-ecommerce" class="block group h-full">
+                        <div class="group relative overflow-hidden rounded-2xl bg-brand-card border border-white/5 hover:border-brand-red/30 transition duration-500 flex flex-col h-full shadow-lg hover:shadow-brand-red/10">
+    
+    <div class="h-48 w-full overflow-hidden relative bg-brand-dark/50">
+        <img src="/My-Portfolio/images/project.png" 
+             alt="Cake E-Commerce" 
+             class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700 ease-in-out"
+             
+             onerror="this.onerror=null; this.src='/images/default-placeholder.jpg';"
+        >
+        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+    </div>
+    
+    <div class="p-6 flex flex-col flex-grow border-t border-white/5">
+        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-red transition">Cake E-Commerce</h3>
+        <p class="text-slate-400 text-sm mb-4 flex-grow">Full-stack bakery shop with admin dashboard.</p>
+        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs px-2 py-1 rounded bg-brand-dark text-slate-300 border border-white/10">Laravel</span>
+                            <span class="text-xs px-2 py-1 rounded bg-brand-dark text-slate-300 border border-white/10">React</span>
+                            <span class="text-xs px-2 py-1 rounded bg-brand-dark text-slate-300 border border-white/10">Tailwind</span>
+                    </div>
+    </div>
+</div>                    </a>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="group relative overflow-hidden rounded-2xl bg-brand-card/50 border border-white/5 border-dashed hover:border-brand-red/30 transition duration-500 flex flex-col h-full items-center justify-center min-h-[350px]">
+                        <div class="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-4 text-slate-500 group-hover:text-brand-red transition">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-400 group-hover:text-white transition">Coming Soon</h3>
+                        <p class="text-slate-500 text-sm mt-2">More projects in the works</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer class="relative bg-brand-dark py-12 overflow-hidden border-t border-white/5">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[1px] bg-gradient-to-r from-transparent via-brand-red to-transparent opacity-50 shadow-[0_0_15px_#ef4444]"></div>
+
+    <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-12 mb-10">
+            
+            <div class="col-span-1 md:col-span-2 space-y-4">
+                <a href="#home" class="text-2xl font-bold text-white tracking-wider">
+                    PORTFO<span class="text-brand-red">LIO.</span>
+                </a>
+                <p class="text-slate-400 text-sm max-w-sm leading-relaxed">
+                    Crafting pixel-perfect digital experiences with a focus on design, performance, and user interaction. Let's build something amazing together.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-widest flex items-center gap-2">
+                    <span class="w-2 h-2 bg-brand-red rounded-full"></span> Quick Links
+                </h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="/My-Portfolio/#home" class="text-slate-400 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Home</a></li>
+                    <li><a href="/My-Portfolio/#about" class="text-slate-400 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">About Me</a></li>
+                    <li><a href="/My-Portfolio/#projects" class="text-slate-400 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Projects</a></li>
+                    <li><a href="/My-Portfolio/#contact" class="text-slate-400 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-widest flex items-center gap-2">
+                    <span class="w-2 h-2 bg-brand-red rounded-full"></span> Connect
+                </h4>
+                
+                <div class="flex gap-3 mb-6">
+                    
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sc.jasper.eupan@cvsu.edu.ph" target="_blank" class="w-12 h-12 rounded-xl bg-[#0F172A] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-brand-red hover:border-brand-red transition-all duration-300 group shadow-lg" title="Compose in Gmail">
+                        <svg class="w-6 h-6 group-hover:scale-110 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </a>
+
+
+                </div>
+
+                <div class="flex items-center gap-3 text-slate-500 text-sm">
+                    <svg class="w-4 h-4 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <span>Dasmariñas, Cavite</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-white/5 pt-6 flex justify-center items-center">
+            <p class="text-xs text-slate-600">
+                &copy; 2026 Jasper Eupan. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+    <script src="/My-Portfolio/js/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Animation duration
+            once: true,     // Animate only once per scroll
+            offset: 100,    // Trigger point
+        });
+
+        // DELETED: Mobile Menu Logic (It is now handled safely inside x-navbar)
+    </script>
+</body>
+</html>
